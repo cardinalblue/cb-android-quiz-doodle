@@ -1,57 +1,14 @@
-My Boilerplate Android
+Take Home Assignment - Doodle Android
 ===
 
-Welcome to my experiment playground for Android. I like **Computer Vision** and **Machine Learning** and am trying to run them on the smartphone.
+The subject of the assignment is to:
 
-> `app` and `lib-tensorflow` is under refactoring.
+- Implement the stroke drawing function with BLACK color and fixed stroke width, where we want to see how familiar you are with the Android touch event and the system design for the sketch editor.
+- (Optional and plus) Get familiar with MVP and Reactive programming because our developers are heavily using the paradigm.
+- (Optional and plus) Implement the canvas erasing function.
 
-Demo Apps
----
+#### Here are some tips
 
-### demo-widget
+You might just need to focus on SketchContract, SketchView and SketchEditorPresenter files, where SketchContract defines the input and output interfaces of VIEW (in a MODEL-VIEW-PRESENTER pattern); SketchView is the implementation of VIEW; Lastly, SketchEditorPresenter contains the business logic.
 
-The demo app using `lib-core` and `lib-widget`.
-
-### demo-dlib
-
-The demo app using `lib-core`, `lib-widget`, `lib-protobuf` and `lib-dlib`.
-
-### demo-doodle
-
-The demo app for letting you to draw sketch on a canvas.
-
-Library
----
-
-### lib-core
-
-The most common Java/JNI code used generally in the demo apps.
-
-### lib-common-theme
-
-The common theme widely used in the demo experiment.
-
-### lib-widget
-
-The custom *View* fishpound. e.g. [ElasticDragLayout](lib-widget/src/main/java/com/my/widget/ElasticDragLayout.java)
-
-### lib-component
-
-The custom *Activity* or *Fragment* that could be repeatedly used.
-
-### lib-dlib
-
-The `dlib` port and Java/JNI functions I'm experimenting.
-
-### lib-protobuf
-
-A serialization/deserialization library from Google.
-
-### lib-tensorflow
-
-The JNI for Tensorflow.
-
-Temporary Folder
----
-
-The `lib-distribution` folder is generated after first build.
+Feel free to ask us anything and we look forward to seeing your submission.
