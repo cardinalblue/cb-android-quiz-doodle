@@ -20,46 +20,46 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-package com.cardinalblue.quiz.doodle.view;
+package com.cardinalblue.quiz.doodle.view
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.util.AttributeSet
+import android.view.View
 
-import com.cardinalblue.quiz.doodle.R;
+import com.cardinalblue.quiz.doodle.SketchContract
 
-import java.util.concurrent.TimeUnit;
+class SketchView : View,
+                   SketchContract.ISketchView {
 
-import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
+    // Brushes and strokes.
+    private val mStrokePaint = Paint()
 
-public class SplashScreenActivity extends AppCompatActivity {
+    constructor(context: Context?) : super(context)
+    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
+        : super(context, attrs, defStyleAttr) {
+
+        // Init stroke paint.
+        mStrokePaint.strokeWidth = 15f
+        mStrokePaint.strokeCap = Paint.Cap.ROUND
+        mStrokePaint.strokeJoin = Paint.Join.ROUND
+        mStrokePaint.style = Paint.Style.STROKE
+        mStrokePaint.isAntiAlias = true
+        mStrokePaint.isDither = true
+    }
+
+    override fun eraseCanvas() {
+        // TODO: Implement it.
+    }
 
     ///////////////////////////////////////////////////////////////////////////
     // Protected / Private Methods ////////////////////////////////////////////
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
 
-        setContentView(R.layout.activity_splash_screen);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // Do nothing but wait few seconds and launch the start page.
-        Observable
-            .just(true)
-            .delay(150, TimeUnit.MILLISECONDS)
-            .subscribe(new Consumer<Boolean>() {
-                @Override
-                public void accept(Boolean ignored) throws Exception {
-                    startActivity(new Intent(SplashScreenActivity.this,
-                                             SketchEditorActivity.class));
-                    finish();
-                }
-            });
+        // TODO: Implement it.
     }
 }
